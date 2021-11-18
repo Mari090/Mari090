@@ -1,0 +1,54 @@
+Лаб5
+1. CREATE DATABASE SKLAD_Arzyaeva_Maria;
+
+2. create table Tovar_Arzyaeva{
+
+id_tov int not null auto_increment,
+
+name_tovar varchar(50),
+
+price float,
+
+PRIMARY KEY (id_tov)
+
+}
+
+3. create table TTN_Arzyaeva(
+
+N_Nakladnoi int,
+
+DataP date,
+
+Postavchik varchar(50),
+
+id_tov int,kol_vo int,
+
+FOREIGN KEY (id_tov) REFERENCES;
+
+}
+
+4. CREATE USER 'Arzyaeva_User1'@'%' IDENTIFIED BY 'password';
+
+CREATE USER 'Arzyaeva_User2'@'%' IDENTIFIED BY 'password';
+
+5. set password Arzyaeva_User1=12121; set password Arzyaeva_User2=21122;
+
+6. Grant select ON MK_TTN.* to Arzyaeva_User1;
+Grant update,select ON MK_TNN.*,MK_Storage.* to Arzyaeva_User2;
+
+
+8. UPDATE Tovar_Arzyaeva
+
+SET price = 214124
+
+WHERE id_tov = (SELECT Max(id_tov)
+
+FROM TTN_Arzyaeva
+
+UPDATE TTN_Arzyaeva
+
+SET DataP = 11.11.2011
+
+WHERE N_Nakladnoi = (SELECT Max(N_Nakladnoi)
+
+FROM TTN_Arzyaeva)
